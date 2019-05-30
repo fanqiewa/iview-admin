@@ -9,14 +9,16 @@ let queryUserByName = (request, response) => {
     let params = url.parse(request.url, true).query;
     userDao.queryUserByName(params.username, params.password, (result) => {
         if(result.length != 0) {
-            let id = result[0].id;
-            let result1ByUsername = result;
+            let resultByUsername = result;
             new Promise((resolve, reject) => {
-                accessDao.queryAccessById(id, (result) => {
+                accessDao.queryAccessById((result) => {
+                    let access = result.map((ele, index) => {
+                        return ele.access
+                    })
                     let obj = {
-                        username : result1ByUsername[0].username,
-                        token: result1ByUsername[0].token,
-                        access: result[0].access
+                        username : resultByUsername[0].username,
+                        token: resultByUsername[0].token,
+                        access: access
                     }
                     resolve(obj);
                 })
