@@ -1,6 +1,8 @@
 import {otherRouter, appRouter} from '@/router/router';
 import Cookies from 'js-cookie';
 import Util from '@/libs/util';
+import { getMenuByRouter } from '../../libs/utils';
+
 
 const app = {
   state: {
@@ -9,7 +11,7 @@ const app = {
       path: '',
       name: 'home_index'
     }],
-    menuList: [], //面包屑数组
+    menuList: [], //左侧菜单
     currentPath:[], //当前选择的面包屑数组
     openedSubmenuArr: [], // 要展开的菜单数组
     routers: [
@@ -17,12 +19,15 @@ const app = {
       ...appRouter
     ]
   },
+  getters: {
+    menuList: (state, getters, rootState) => getMenuByRouter(appRouter, rootState.user.access)
+  },
   mutations: {
     pageOpenedList(state, get) { //左侧菜单&标签列表
       console.log(state)
     },
-    //更新面包屑数组（包含所有符合条件的路由）
-    updateMenulist(state) { //更新面包屑导航
+    //更新菜单（包含所有符合条件的路由）
+    updateMenulist(state) { //更新菜单
       if (!Cookies.get('access')) {
         return;
       }

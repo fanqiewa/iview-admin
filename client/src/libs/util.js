@@ -66,7 +66,6 @@ util.handleTitle = function (vm, item) {
 util.setCurrentPath = (vm, name) => {
   let title = '';
   let isOtherRouter = false;
-  console.log(vm.$store.state.app.routers)
   //遍历所有的路由，查询与name相等的路由，设置title
   vm.$store.state.app.routers.forEach(ele => {
     // console.log(ele.name)
