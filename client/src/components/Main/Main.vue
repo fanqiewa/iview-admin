@@ -1,18 +1,20 @@
 <template>
-  <div>
-    <side-bar-menu></side-bar-menu>
+  <Layout style="height: 100%">
+    <Slider hide-trigger collapsible :width="256" :collapsed-width="64" v-model="collapsed" :style="{overflow: 'hidden'}">
+      <side-menu></side-menu>
+    </Slider>
     <router-view></router-view>
-  </div>
+  </Layout>
 </template>
 
 <script>
-  import sideBarMenu from "@/components/sideBarMenu/sideBarMenu.vue";
+  import SideMenu from './components/side-menu'
   import util from '@/libs/util.js';
 
   export default {
     name: "Main",
     components: {
-      sideBarMenu
+        SideMenu
     },
     methods: {
       init(){

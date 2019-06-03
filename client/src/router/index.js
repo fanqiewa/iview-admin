@@ -19,23 +19,23 @@ export const router = new Router(RouterConfig);
 // console.log(router.app) //null 拿不到Vue实例，因为Vue还没有挂载成功
 //以下操作是为了在路由跳转的时候，配置的一些拦截器，重定向等。
 // 只要有new Vue中添加了router,不管路由有没有跳过去，都会执行beforeEach导航钩子函数
-router.beforeEach((to, from, next) => {
-  //console.log(router.app.$store) //拿到Vue实例，因为到此阶段，$store还没有挂载成功
+// router.beforeEach((to, from, next) => {
+//   //console.log(router.app.$store) //拿到Vue实例，因为到此阶段，$store还没有挂载成功
 
-  iView.LoadingBar.start();
-  //判断有没有登录且前往的不是登录界面
-  if (!Cookies.get('user') && to.name !== 'login') {
-    next({
-      name: 'login'
-    });
-  } else if (Cookies.get('user') && to.name === 'login') {
-    Util.title();
-    next({
-      name: 'home_index'
-    })
-  }
-  next();
-})
+//   iView.LoadingBar.start();
+//   //判断有没有登录且前往的不是登录界面
+//   if (!Cookies.get('user') && to.name !== 'login') {
+//     next({
+//       name: 'login'
+//     });
+//   } else if (Cookies.get('user') && to.name === 'login') {
+//     Util.title();
+//     next({
+//       name: 'home_index'
+//     })
+//   }
+//   next();
+// })
 
 //afterEach导航钩子函数，当路由跳转完成时执行
 

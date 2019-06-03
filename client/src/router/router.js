@@ -1,4 +1,4 @@
-import Main from '@/view/Main.vue';
+import Main from '@/components/Main/Main.vue';
 
 
 //登录路由
