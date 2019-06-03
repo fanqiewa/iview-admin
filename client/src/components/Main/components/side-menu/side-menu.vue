@@ -2,7 +2,7 @@
     <div>
       <slot></slot>
       <Menu ref="menu" v-bind="!collapsed" :active-name="activeName" :open-name="openedName" :accordion="accordion" :theme="theme" width="auto" @on-select="handleSelect">
-          
+          123
       </Menu>
     </div>
 </template>
