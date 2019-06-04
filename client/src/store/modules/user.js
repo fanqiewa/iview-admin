@@ -2,7 +2,7 @@ import { routers } from '@/router/router';
 
 const user = {
   state: {
-
+    access: ''
   },
   mutations: {
 

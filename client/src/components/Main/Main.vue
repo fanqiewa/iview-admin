@@ -1,10 +1,10 @@
 <template>
   <Layout style="height: 100%">
-    <Slider hide-trigger collapsible :width="256" :collapsed-width="64" v-model="collapsed" :style="{overflow: 'hidden'}">
+    <Sider hide-trigger collapsible :width="256" :collapsed-width="64" v-model="collapsed" :style="{overflow: 'hidden'}">
       <side-menu accordion ref="sideMenu" :active-name="$route.name" :collapsed="collapsed" @on-select="turnToPage" :menuList="menuList">
 
       </side-menu>
-    </Slider>
+    </Sider>
     <router-view></router-view>
   </Layout>
 </template>

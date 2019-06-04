@@ -15,62 +15,73 @@ const loginRouter = {
 export const appRouter = [
   {
     path: '/admin/',
-    icon: 'home',
+    // icon: 'home',
     name: 'home',
-    access: 'index',
+    // access: 'index',
+    meta: {
+      icon: 'logo-buffer',
+      title: '组件'
+    },
     component: Main,
     children: [
       {
         path: 'home_index',
         title: '首页',
-        access: ['aaa'],
         name: 'home_index',
+        meta: {
+          icon: 'md-arrow-dropdown-circle',
+          title: '首页'
+        },
         component: () => import('@/view/home/home.vue')
       },
       {
         path: 'home_index',
         title: '首页2',
         name: 'name',
+        meta: {
+          icon: 'md-arrow-dropdown-circle',
+          title: '首页'
+        },
         component: () => import('@/view/home/home.vue')
       }
     ]
   },
-  {
-    path: '/admin/',
-    icon: 'social-buffer',
-    name: '活动管理',
-    component: Main,
-    children: [
-      {
-        path: 'activityManage',
-        title: '活动展示',
-        access: ['activity'],
-        name: 'activityManage',
-        component: () => import('@/view/activity/activityManage.vue')
-      }
-    ]
-  },
-  {
-    path: '/admin/',
-    icon: 'social-buffer',
-    name: '票劵管理',
-    component: Main,
-    children: [
-      {
-        path: 'ticketManage',
-        title: '票劵列表',
-        access: ['ticketManage'],
-        name: 'ticketManage',
-        component: () => import('@/view/ticket/ticketManage.vue')
-      },
-      {
-        path: 'ticketManagea',
-        title: '票劵审核',
-        name: 'ticketManage',
-        component: () => import('@/view/ticket/ticketManage.vue')
-      }
-    ]
-  }
+  // {
+  //   path: '/admin/',
+  //   icon: 'social-buffer',
+  //   name: '活动管理',
+  //   component: Main,
+  //   children: [
+  //     {
+  //       path: 'activityManage',
+  //       title: '活动展示',
+  //       access: ['activity'],
+  //       name: 'activityManage',
+  //       component: () => import('@/view/activity/activityManage.vue')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/admin/',
+  //   icon: 'social-buffer',
+  //   name: '票劵管理',
+  //   component: Main,
+  //   children: [
+  //     {
+  //       path: 'ticketManage',
+  //       title: '票劵列表',
+  //       access: ['ticketManage'],
+  //       name: 'ticketManage',
+  //       component: () => import('@/view/ticket/ticketManage.vue')
+  //     },
+  //     {
+  //       path: 'ticketManagea',
+  //       title: '票劵审核',
+  //       name: 'ticketManage',
+  //       component: () => import('@/view/ticket/ticketManage.vue')
+  //     }
+  //   ]
+  // }
 ]
 
 export const otherRouter = {
