@@ -36,52 +36,50 @@ export const appRouter = [
       },
       {
         path: 'home_index',
-        title: '首页2',
+        title: '首页',
         name: 'name',
         meta: {
           icon: 'md-arrow-dropdown-circle',
           title: '首页'
         },
         component: () => import('@/view/home/home.vue')
+      },
+      {
+        path: 'activityManage',
+        name: 'activityManage',
+        meta: {
+          icon: 'md-arrow-dropdown-circle',
+          title: '活动展示'
+        },
+        component: () => import('@/view/activity/activityManage.vue')
+      },
+      {
+        path: 'activityManage',
+        name: 'activityManage2',
+        meta: {
+          icon: 'md-arrow-dropdown-circle',
+          title: '活动展示'
+        },
+        component: () => import('@/view/activity/activityManage.vue')
       }
     ]
   },
-  // {
-  //   path: '/admin/',
-  //   icon: 'social-buffer',
-  //   name: '活动管理',
-  //   component: Main,
-  //   children: [
-  //     {
-  //       path: 'activityManage',
-  //       title: '活动展示',
-  //       access: ['activity'],
-  //       name: 'activityManage',
-  //       component: () => import('@/view/activity/activityManage.vue')
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: '/admin/',
-  //   icon: 'social-buffer',
-  //   name: '票劵管理',
-  //   component: Main,
-  //   children: [
-  //     {
-  //       path: 'ticketManage',
-  //       title: '票劵列表',
-  //       access: ['ticketManage'],
-  //       name: 'ticketManage',
-  //       component: () => import('@/view/ticket/ticketManage.vue')
-  //     },
-  //     {
-  //       path: 'ticketManagea',
-  //       title: '票劵审核',
-  //       name: 'ticketManage',
-  //       component: () => import('@/view/ticket/ticketManage.vue')
-  //     }
-  //   ]
-  // }
+  {
+    path: '/admin/',
+    name: 'admin',
+    component: Main,
+    children: [
+      {
+        path: 'activityManage',
+        name: 'activityManage',
+        meta: {
+          icon: 'md-arrow-dropdown-circle',
+          title: '活动展示'
+        },
+        component: () => import('@/view/activity/activityManage.vue')
+      }
+    ]
+  },
 ]
 
 export const otherRouter = {
